@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gameBoardActivity"
+    android:id="@+id/main"
+    android:background="@drawable/gradient_background">
+    <Button
+        android:id="@+id/stopResumeButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_baseline_volume_up_24" />
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/stopResumeButton"
+        android:orientation="horizontal"
+        android:id="@+id/timerLayout">
+
+        <ImageView
+            android:id="@+id/turnImage"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/turnanim"></ImageView>
+    </LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="420dp"
+    android:layout_below="@id/timerLayout"
+    android:id="@+id/boardScroll">
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/boardLayout">
+    </LinearLayout>
+
+</ScrollView>
+
+    <ImageView
+        android:id="@+id/showNames"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_baseline_remove_red_eye_24"
+        android:background="@drawable/round_button_template"
+        android:layout_below="@id/boardScroll"/>
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:type="linear"
+        android:angle="45"
+        android:startColor="#FFBF00"
+        android:endColor="#FD0404"
+        android:centerColor="#FF8000"
+        android:centerX="0.5"
+        android:centerY="0.5"
+        android:gradientRadius="200" />
+
+    <corners android:radius="16dp" /> <!-- Adjust the radius value to control the roundness -->
+</shape>

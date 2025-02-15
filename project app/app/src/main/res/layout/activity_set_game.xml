@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".setGame"
+    android:background="@drawable/gradient_background">
+
+
+    <Button
+        android:id="@+id/stopResumeButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_baseline_volume_up_24"
+        />
+
+    <Button
+        android:layout_width="115dp"
+        android:layout_height="40dp"
+        android:id="@+id/changeToDefault"
+        android:text="Default game"
+        android:textSize="10sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_button_template"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/localPlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stopResumeButton"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/viking"
+            android:shadowColor="#FF0000"
+            android:shadowDx="12"
+            android:shadowDy="12"
+            android:shadowRadius="8"
+            android:text="set game"
+            android:textColor="#00BCD4"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <!--        game mode-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/viking"
+                android:text="game mode"
+                android:textColor="#00BCD4"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/gameMode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:spinnerMode="dialog" />
+        </LinearLayout>
+
+        <!--        time-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="191dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:fontFamily="@font/viking"
+                    android:gravity="center"
+                    android:text="player One time"
+                    android:textColor="#00BCD4"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/playerOneTime"
+                    android:layout_width="150dp"
+                    android:layout_gravity="center"
+                    android:layout_height="match_parent"
+                    android:spinnerMode="dialog" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="191dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/viking"
+                    android:gravity="center"
+                    android:text="player Two time"
+                    android:textColor="#00BCD4"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/playerTwoTime"
+                    android:layout_width="150dp"
+                    android:layout_gravity="center"
+                    android:layout_height="match_parent"
+                    android:spinnerMode="dialog" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--add reduce time-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/reduceTime"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="time reduced"
+                android:textSize="20dp">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/addTime"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="time added"
+                android:textSize="20dp">
+
+            </EditText>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/whiteStart"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/wking"
+                android:src="@drawable/selected_rec"
+
+                >
+
+            </ImageView>
+
+            <Button
+                android:id="@+id/RandomStart"
+                android:layout_width="140dp"
+                android:layout_height="75dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/regular_rec"
+                android:fontFamily="@font/viking"
+                android:shadowColor="#FF0000"
+                android:shadowDx="12"
+                android:shadowDy="12"
+                android:shadowRadius="8"
+                android:text="random"
+                android:textColor="#00BCD4"
+                android:textSize="12dp"
+                android:textStyle="bold">
+
+            </Button>
+
+            <ImageView
+                android:id="@+id/blackStart"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/bking"
+                android:src="@drawable/regular_rec">
+
+            </ImageView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/startGameBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/localPlay"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="start game"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:background="@drawable/round_button_template"/>
+</RelativeLayout>

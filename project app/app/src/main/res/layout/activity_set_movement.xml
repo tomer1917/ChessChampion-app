@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomSetBoard"
+    android:background="@drawable/gradient_background"
+    >
+
+
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set movement and attack"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        />
+
+
+
+    <LinearLayout
+        android:id="@+id/switchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/titleTextView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movement"
+            android:textSize="18sp"/>
+
+        <Switch
+            android:id="@+id/movementSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attack"
+            android:textSize="18sp"/>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/movement_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switchLayout"
+
+        android:text="movement: "
+        android:textSize="20sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_below="@+id/switchLayout"
+        android:layout_toRightOf="@id/movement_label">
+        <TextView
+            android:id="@+id/movement_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+           />
+    </ScrollView>
+
+
+    <TextView
+        android:id="@+id/attack_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="attack: "
+        android:textSize="20sp"
+        android:layout_below="@id/movement_label"
+        android:layout_alignStart="@id/movement_label" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_toRightOf="@id/attack_label"
+        android:layout_alignBottom="@id/attack_label"
+        android:id="@+id/scrollAttack">
+        <TextView
+            android:id="@+id/attack_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+    />
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_below="@+id/scrollAttack"
+        >
+        <LinearLayout
+            android:id="@+id/boardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_below="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/movePref"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Infinite Movement" />
+
+        <CheckBox
+            android:id="@+id/checkbox_infinite_movement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Can Move Over" />
+
+        <CheckBox
+            android:id="@+id/checkbox_can_move_over"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/attackPref"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/movePref"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Infinite Attack" />
+
+        <CheckBox
+            android:id="@+id/checkbox_infinite_attack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Can Attack Over" />
+
+        <CheckBox
+            android:id="@+id/checkbox_can_attack_over"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/attackPref"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/round_button_template"
+        android:text="add"/>
+
+
+
+    <Button
+        android:id="@+id/changeToDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/attackPref"
+        android:layout_centerHorizontal="true"
+        android:layout_toLeftOf="@id/addButton"
+        android:layout_marginRight ="30dp"
+        android:text="Default"
+        android:background="@drawable/round_button_template"
+       />
+
+
+    <Button
+        android:id="@+id/remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/attackPref"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/addButton"
+        android:layout_marginLeft ="30dp"
+        android:text="remove"
+        android:background="@drawable/round_button_template"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/whiteSoldiers"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/addButton"
+        android:gravity="center">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/finishBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whiteSoldiers"
+       android:layout_marginLeft="100dp"
+        android:background="@drawable/round_button_template"
+        android:text="finish"/>
+
+    <Button
+        android:id="@+id/continueBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whiteSoldiers"
+        android:layout_toRightOf="@+id/finishBtn"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/round_button_template"
+        android:text="continue"/>
+
+
+
+
+
+</RelativeLayout>

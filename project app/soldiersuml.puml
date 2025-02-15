@@ -1,0 +1,64 @@
+@startuml
+class com.example.chessfinalproject.Bishop {
++ void highlight(BoardTile[][],boolean)
++ boolean IsValidMovement(BoardTile,BoardTile[][])
++ boolean IsValidAttack(BoardTile,BoardTile[][])
+}
+class com.example.chessfinalproject.Queen {
++ void highlight(BoardTile[][],boolean)
++ boolean IsValidMovement(BoardTile,BoardTile[][])
++ boolean IsValidAttack(BoardTile,BoardTile[][])
+}
+class com.example.chessfinalproject.Rook {
+~ boolean moved
++ void highlight(BoardTile[][],boolean)
++ boolean IsValidMovement(BoardTile,BoardTile[][])
++ boolean IsValidAttack(BoardTile,BoardTile[][])
+}
+class com.example.chessfinalproject.King {
+~ boolean moved
++ void highlight(BoardTile[][],boolean)
++ boolean IsValidMovement(BoardTile,BoardTile[][])
++ boolean IsValidAttack(BoardTile,BoardTile[][])
++ boolean castling(BoardTile,BoardTile[][])
+}
+abstract class com.example.chessfinalproject.Soldier {
+# Bitmap imageBitmap
+# boolean whitePiece
+# Bitmap diffaultImageBitmap
+# int[] startingPosition
+# int[] currentPosition
+# int[][] validMovement
+# int[][] validAttack
+# boolean infiniteMovement
+# String name
+# boolean canRunOver
+# boolean canAttackOver
+# boolean infiniteAttack
+# {static} int rows
+# {static} int cols
+# {static} boolean customChess
++ {abstract}boolean IsValidMovement(BoardTile,BoardTile[][])
++ {abstract}boolean IsValidAttack(BoardTile,BoardTile[][])
++ {abstract}void highlight(BoardTile[][],boolean)
+}
+class com.example.chessfinalproject.Knight {
++ void highlight(BoardTile[][],boolean)
++ boolean IsValidMovement(BoardTile,BoardTile[][])
++ boolean IsValidAttack(BoardTile,BoardTile[][])
+}
+class com.example.chessfinalproject.Pawn {
++ BoardTile lastTile
++ void highlight(BoardTile[][],boolean)
++ boolean IsValidMovement(BoardTile,BoardTile[][])
++ boolean IsValidAttack(BoardTile,BoardTile[][])
+}
+
+
+com.example.chessfinalproject.Soldier <|-- com.example.chessfinalproject.Bishop
+com.example.chessfinalproject.Soldier <|-- com.example.chessfinalproject.Queen
+com.example.chessfinalproject.Soldier <|-- com.example.chessfinalproject.Rook
+com.example.chessfinalproject.Soldier <|-- com.example.chessfinalproject.King
+com.example.chessfinalproject.Soldier <|-- com.example.chessfinalproject.Knight
+com.example.chessfinalproject.Soldier <|-- com.example.chessfinalproject.Pawn
+@enduml

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout"
+    tools:context=".ui.home.BoardFragment"
+    android:background="@drawable/oldmantwo">
+
+
+
+    <Button
+        android:id="@+id/stopResumeButtonFrag"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_baseline_volume_up_24"
+        />
+
+
+<!--
+    <TextView
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="click to change color"
+        />
+-->
+
+    <ImageView
+        android:layout_marginTop="90dp"
+        android:id="@+id/imageView1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/stopResumeButtonFrag"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/brighttile"
+        android:layout_marginLeft="60dp"
+       />
+
+    <ImageView
+        android:layout_marginTop="90dp"
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/stopResumeButtonFrag"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="60dp"
+        android:background="@drawable/browntile"
+       />
+
+<!--    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/imageView2"
+        android:id="@+id/colorPicker"
+        android:layout_marginTop="30dp"
+        android:text="set colors"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/round_button_template"/>-->
+
+    <RelativeLayout
+        android:id="@+id/addbtnlayout"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/imageView2"
+        android:layout_marginTop="130dp"
+        android:layout_centerHorizontal="true">
+
+        <ImageButton
+            android:id="@+id/colorPicker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_button_template" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="SET COLORS"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+    <!--    <Button
+            android:id="@+id/returnHome"
+            android:layout_width="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/colorPicker"
+            android:layout_centerHorizontal="true"
+            android:text="returnHome"
+            android:background="@drawable/round_button_template"/>-->
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/addbtnlayout"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true">
+
+        <ImageButton
+            android:id="@+id/returnHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_button_template" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="RETURN HOME"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

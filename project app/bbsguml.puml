@@ -1,0 +1,91 @@
+@startuml
+class com.example.chessfinalproject.Board {
+~ int cols
+~ int rows
+~ BoardTile[][] boardTileMatrix
+~ ArrayList<Soldier> soldiers
+- int getScreenWidth(Context)
+}
+class com.example.chessfinalproject.GameActivity {
+- boolean isWhiteTurn
+~ int[] blackTime
+~ int[] whiteTime
+~ TextView playerOneTime
+~ TextView playerTwoTime
+~ boolean pauseGame
+~ Context context
+~ ImageView imageView
+~ boolean whiteKingChecked
+~ boolean blackKingChecked
+~ ImageView showNames
+~ LinearLayout boardLayout
+~ BoardTile[][] boardTileMatrix
+~ ArrayList<Soldier> soldiers
+~ ArrayList<Soldier> constSoldiers
+~ BoardTile selectedBoardTile
+~ Soldier whiteKing
+~ Soldier checkMateorToBlackKing
+~ float rotationCounter
+~ int turnsCounter
+- Toast toast
+~ int changeImageCounter
+- Toast currentToast
++ void createCustomBoard(Context,int,int,int,int,ArrayList<Soldier>,LinearLayout)
++ void createMove()
++ void endTurnFunction()
++ void draw3()
++ void endGameDialog(int)
++ void changeSoldierDialog(BoardTile,boolean)
++ boolean canBeAttacked(BoardTile,boolean)
++ void isKingChecked2()
++ void checkMate(boolean)
++ int[] getPath(BoardTile,BoardTile)
++ Soldier createNewSoldier(Soldier)
++ void flipBoard()
++ void changeTurnAnimation()
++ void createTimer(Context,LinearLayout,int[],int[],int,int)
++ void setContext(Context)
++ void setImageView(ImageView)
++ void setShowNames(ImageView)
++ boolean kingClash()
++ boolean enPassant(BoardTile,BoardTile)
+- void showToast(String)
+}
+abstract class com.example.chessfinalproject.Soldier {
+# Bitmap imageBitmap
+# boolean whitePiece
+# Bitmap diffaultImageBitmap
+# int[] startingPosition
+# int[] currentPosition
+# int[][] validMovement
+# int[][] validAttack
+# boolean infiniteMovement
+# String name
+# boolean canRunOver
+# boolean canAttackOver
+# boolean infiniteAttack
+# {static} int rows
+# {static} int cols
+# {static} boolean customChess
++ {abstract}boolean IsValidMovement(BoardTile,BoardTile[][])
++ {abstract}boolean IsValidAttack(BoardTile,BoardTile[][])
++ {abstract}void highlight(BoardTile[][],boolean)
+}
+class com.example.chessfinalproject.BoardTile {
++ int row
++ int col
+~ Soldier currentSoldier
+~ int length
+- boolean redAura
+~ int tileColor
+~ boolean highlight
+# void onDraw(Canvas)
++ void setHighlight(boolean)
++ void setRedAura(boolean)
+# void onAttachedToWindow()
+}
+
+
+android.widget.LinearLayout <|-- com.example.chessfinalproject.Board
+com.example.chessfinalproject.AppCompatImageView <|-- com.example.chessfinalproject.BoardTile
+@enduml

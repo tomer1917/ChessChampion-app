@@ -1,0 +1,46 @@
+@startuml
+class com.example.chessfinalproject.Board {
+~ int cols
+~ int rows
+~ BoardTile[][] boardTileMatrix
+~ ArrayList<Soldier> soldiers
+- int getScreenWidth(Context)
+}
+abstract class com.example.chessfinalproject.Soldier {
+# Bitmap imageBitmap
+# boolean whitePiece
+# Bitmap diffaultImageBitmap
+# int[] startingPosition
+# int[] currentPosition
+# int[][] validMovement
+# int[][] validAttack
+# boolean infiniteMovement
+# String name
+# boolean canRunOver
+# boolean canAttackOver
+# boolean infiniteAttack
+# {static} int rows
+# {static} int cols
+# {static} boolean customChess
++ {abstract}boolean IsValidMovement(BoardTile,BoardTile[][])
++ {abstract}boolean IsValidAttack(BoardTile,BoardTile[][])
++ {abstract}void highlight(BoardTile[][],boolean)
+}
+class com.example.chessfinalproject.BoardTile {
++ int row
++ int col
+~ Soldier currentSoldier
+~ int length
+- boolean redAura
+~ int tileColor
+~ boolean highlight
+# void onDraw(Canvas)
++ void setHighlight(boolean)
++ void setRedAura(boolean)
+# void onAttachedToWindow()
+}
+
+
+android.widget.LinearLayout <|-- com.example.chessfinalproject.Board
+com.example.chessfinalproject.AppCompatImageView <|-- com.example.chessfinalproject.BoardTile
+@enduml

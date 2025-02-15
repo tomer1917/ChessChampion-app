@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.slideshow.MusicFragment"
+    android:background="@drawable/colorfullbg">
+
+    <Button
+        android:id="@+id/stopResumeButtonFrag"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_baseline_volume_up_24"
+        />
+
+
+    <Spinner
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/musicSpinner"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/stopResumeButtonFrag"
+        android:background="@drawable/round_grad_bg"
+        ></Spinner>
+
+    <ImageButton
+        android:id="@+id/testMusic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+       android:layout_toRightOf="@id/setmusiclayout"
+        android:layout_centerVertical="true"
+        android:background="@drawable/vinyl"
+        ></ImageButton>
+
+<!--    <Button
+        android:id="@+id/setMusic"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:text="set music"
+        android:textSize="15dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/round_button_template"
+        ></Button>-->
+
+
+    <RelativeLayout
+        android:id="@+id/setmusiclayout"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="130dp"
+        android:layout_centerVertical="true"
+       >
+
+        <ImageButton
+            android:id="@+id/setMusic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_button_template" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="SET MUSIC"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
