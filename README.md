@@ -33,7 +33,7 @@ Project Documentation (PDF): docs/Project_Documentation.pdf
 
 #License
 
-This project is open-source under the MIT License. Feel free to contribute or modify as needed.
+This project is open-source under the MIT License.
 
 Contact
 
